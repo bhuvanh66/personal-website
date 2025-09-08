@@ -223,20 +223,21 @@ function App() {
         {/* Scroll Indicator */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.3 }}
+          animate={{ opacity: 0.6 }}
           transition={{ duration: 1, delay: 1 }}
           style={{
             position: 'absolute',
             bottom: '2rem',
             left: '50%',
-            transform: 'translateX(-50%)'
+            transform: 'translateX(-50%)',
+            color: 'rgba(255,255,255,0.8)'
           }}
         >
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="6 9 12 15 18 9"/>
             </svg>
           </motion.div>
