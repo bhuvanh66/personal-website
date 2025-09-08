@@ -2,9 +2,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import FluidBackground from './components/FluidBackground'
 import P5FlowBackground from './components/P5FlowBackground'
-// import DraggableCard from './components/DraggableCard'
 import ProjectCard from './components/ProjectCard'
 import { AccordionItem } from './components/Accordion'
 import SkillPill from './components/SkillPill'
@@ -53,8 +51,9 @@ function App() {
       })
     }
   }, [])
+
   return (
-      <div>
+    <div>
       <header ref={navRef} style={{ position: 'sticky', top: 0, zIndex: 10, background: 'rgba(12,12,14,0.6)', backdropFilter: 'blur(8px)', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <nav style={{ display: 'flex', gap: '1rem', alignItems: 'center', justifyContent: 'center', padding: '0.75rem 1rem' }}>
           <a href="#hero">Home</a>
@@ -65,33 +64,187 @@ function App() {
         </nav>
       </header>
 
-      <section id="hero" ref={heroRef} style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(180deg, rgba(9,10,15,0) 70%, rgba(9,10,15,1) 100%)' }}>
-        <FluidBackground />
-        <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', padding: '2rem' }}>
+      <section id="hero" ref={heroRef} style={{ 
+        position: 'relative', 
+        minHeight: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        background: '#0A0A0A'
+      }}>
+        <div style={{ 
+          textAlign: 'center',
+          padding: '2rem'
+        }}>
+          {/* Name */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-            style={{ fontSize: '3rem', margin: 0 }}
+            transition={{ duration: 0.8 }}
+            style={{ 
+              fontSize: '3.5rem', 
+              margin: '0 0 1rem 0',
+              fontWeight: 400,
+              color: '#ffffff'
+            }}
           >
-            Bhuvan Hospet
+            Hi, I'm Bhuvan Hospet
           </motion.h1>
+
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 0.95, y: 0 }}
-            transition={{ duration: 1.0, ease: 'easeOut', delay: 0.2 }}
-            style={{ maxWidth: 700, margin: '1rem auto 0', lineHeight: 1.6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            style={{ 
+              fontSize: '1.1rem',
+              lineHeight: 1.6,
+              marginBottom: '2rem',
+              color: 'rgba(255,255,255,0.7)',
+              maxWidth: '600px',
+              margin: '0 auto 2rem'
+            }}
           >
-            Hi, I’m Bhuvan — a frontend-focused developer crafting fluid, interactive experiences.
-            I blend React + TypeScript with creative tech like WebGL and motion to build playful,
-            performant interfaces.
+            I'm a Computer Science student passionate about building interactive web experiences. 
+            Currently focused on React, TypeScript, and modern web technologies.
           </motion.p>
+
+          {/* About Me Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            style={{ marginBottom: '2rem' }}
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' })}
+              style={{
+                padding: '12px 28px',
+                background: 'transparent',
+                border: '1px solid rgba(255,255,255,0.3)',
+                borderRadius: '8px',
+                color: '#ffffff',
+                fontSize: '1rem',
+                cursor: 'pointer',
+                transition: 'all 0.3s'
+              }}
+            >
+              About Me
+            </motion.button>
+          </motion.div>
+
+          {/* Contact Icons and Resume Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center' }}
+          >
+            {/* GitHub */}
+            <motion.a
+              href="https://github.com/bhuvanh66"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.1 }}
+              style={{
+                color: 'rgba(255,255,255,0.7)',
+                transition: 'all 0.3s'
+              }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </motion.a>
+
+            {/* LinkedIn */}
+            <motion.a
+              href="https://linkedin.com/in/bhuvan-hospet/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.1 }}
+              style={{
+                color: 'rgba(255,255,255,0.7)',
+                transition: 'all 0.3s'
+              }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </motion.a>
+
+            {/* Email */}
+            <motion.a
+              href="mailto:hospet.b@northeastern.edu"
+              whileHover={{ scale: 1.1 }}
+              style={{
+                color: 'rgba(255,255,255,0.7)',
+                transition: 'all 0.3s'
+              }}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-10 5L2 7"/>
+              </svg>
+            </motion.a>
+
+            {/* Separator */}
+            <div style={{ width: '1px', height: '24px', background: 'rgba(255,255,255,0.2)', margin: '0 8px' }} />
+
+            {/* Resume Button */}
+            <motion.a
+              href="/resume.pdf"
+              download="Bhuvan_Hospet_Resume.pdf"
+              whileHover={{ scale: 1.05 }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '8px 16px',
+                border: '1px solid rgba(255,255,255,0.3)',
+                borderRadius: '8px',
+                color: 'rgba(255,255,255,0.9)',
+                textDecoration: 'none',
+                fontSize: '0.95rem',
+                transition: 'all 0.3s'
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7,10 12,15 17,10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Resume
+            </motion.a>
+          </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.3 }}
+          transition={{ duration: 1, delay: 1 }}
+          style={{
+            position: 'absolute',
+            bottom: '2rem',
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </motion.div>
+        </motion.div>
       </section>
 
       <section id="education" style={{ minHeight: '100vh', padding: '6rem 1.5rem', background: 'radial-gradient(1200px 600px at 20% 10%, rgba(56,189,248,0.18), transparent), radial-gradient(900px 500px at 80% 30%, rgba(168,85,247,0.18), transparent), linear-gradient(135deg, #0B1020 0%, #0C0C14 60%)' }}>
         <h2>Education</h2>
-        {/* Education animated container */}
         <motion.div
           className="section-content"
           initial="hidden"
@@ -101,7 +254,6 @@ function App() {
         >
           <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
             <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
-              {/* Profile Picture */}
               <div style={{ flexShrink: 0 }}>
                 <img 
                   src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
@@ -117,7 +269,6 @@ function App() {
                 />
               </div>
               
-              {/* Education Content */}
               <div style={{ flex: 1, color: '#ffffff' }}>
                 <h3 style={{ margin: 0, color: '#ffffff', fontSize: '1.4rem' }}>Northeastern University</h3>
                 <p style={{ margin: '4px 0 0 0', opacity: 0.9, color: '#ffffff', fontSize: '1.1rem' }}>B.S. Computer Science & Business Administration</p>
@@ -164,7 +315,6 @@ function App() {
 
       <section id="experience" style={{ minHeight: '100vh', padding: '6rem 1.5rem', background: 'radial-gradient(1100px 540px at 10% 20%, rgba(251,113,133,0.16), transparent), radial-gradient(900px 520px at 90% 40%, rgba(59,130,246,0.16), transparent), linear-gradient(135deg, #10101F 0%, #0C0C14 60%)' }}>
         <h2>Experience</h2>
-        {/* Experience animated container */}
         <motion.div
           className="section-content"
           initial="hidden"
@@ -241,7 +391,6 @@ function App() {
       <section id="projects" style={{ position: 'relative', minHeight: '100vh', padding: '6rem 1.5rem', overflow: 'hidden', background: 'radial-gradient(1000px 500px at 15% 20%, rgba(222, 232, 234, 0.16), transparent), radial-gradient(900px 520px at 85% 50%, rgba(99,102,241,0.18), transparent), linear-gradient(135deg, #0F0F1C 0%, #0C0C14 60%)' }}>
         <P5FlowBackground />
         <h2 style={{ position: 'relative', zIndex: 1 }}>Projects</h2>
-        {/* Projects animated container */}
         <motion.div
           className="section-content"
           style={{ position: 'relative', zIndex: 1 }}
@@ -298,14 +447,40 @@ function App() {
         <h2>Contact</h2>
         <div className="section-content">
           <div className="card section-item" style={{ maxWidth: 700 }}>
-            <p>Email: <a href="mailto:hospet.b@northeastern.edu">hospet.b@northeastern.edu</a></p>
-            <p>Phone: <a href="tel:14752399484">475-239-9484</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/bhuvan-hospet/" target="_blank" rel="noreferrer">linkedin.com/in/bhuvan-hospet/</a></p>
-            <p>GitHub: <a href="https://github.com/bhuvanh66" target="_blank" rel="noreferrer">github.com/bhuvanh66</a></p>
-            
+            <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#ffffff', flexShrink: 0 }}>
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <path d="m22,7-10,5L2,7"></path>
+              </svg>
+              <span>Email: <a href="mailto:hospet.b@northeastern.edu">hospet.b@northeastern.edu</a></span>
+            </p>
+
+            <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#ffffff', flexShrink: 0 }}>
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>Phone: <a href="tel:14752399484">475-239-9484</a></span>
+            </p>
+
+            <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#ffffff', flexShrink: 0 }}>
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>LinkedIn: <a href="https://linkedin.com/in/bhuvan-hospet/" target="_blank" rel="noreferrer">linkedin.com/in/bhuvan-hospet/</a></span>
+            </p>
+
+            <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#ffffff', flexShrink: 0 }}>
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              <span>GitHub: <a href="https://github.com/bhuvanh66" target="_blank" rel="noreferrer">github.com/bhuvanh66</a></span>
+            </p>
+
             <div style={{ marginTop: 20, textAlign: 'center' }}>
-              <a 
-                href="/resume.pdf" 
+              <a
+                href="/resume.pdf"
                 download="Bhuvan_Hospet_Resume.pdf"
                 style={{
                   display: 'inline-flex',
@@ -335,12 +510,12 @@ function App() {
                   <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
                 Download Resume
-        </a>
-      </div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
-      </div>
+    </div>
   )
 }
 
