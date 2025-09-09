@@ -257,7 +257,7 @@ function App() {
             <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
               <div style={{ flexShrink: 0 }}>
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                  src="/images/headshot.jpg" 
                   alt="Bhuvan Hospet"
                   style={{
                     width: 120,
@@ -293,7 +293,6 @@ function App() {
                       'VITAL Hackathon 1st Place',
                       'John Martinson Honors',
                       'Presidential Volunteer Service (Gold)',
-                      'National Merit Finalist',
                       'Outstanding Engineer (SWE)'
                     ]} delay={0.2} />
                   </div>
@@ -326,7 +325,7 @@ function App() {
           <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
               <img 
-                src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=80&h=80&fit=crop" 
+                src="/images/stylerelogo.jpeg" 
                 alt="Style.re"
                 style={{
                   width: 60,
@@ -359,7 +358,7 @@ function App() {
           <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
               <img 
-                src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=80&h=80&fit=crop" 
+                src="/images/c4clogo.png" 
                 alt="Code4Community"
                 style={{
                   width: 60,
@@ -391,7 +390,7 @@ function App() {
           <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
               <img 
-                src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=80&h=80&fit=crop" 
+                src="/images/tamidlogo.jpeg" 
                 alt="TAMID Group"
                 style={{
                   width: 60,
@@ -422,7 +421,7 @@ function App() {
           <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
               <img 
-                src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=80&h=80&fit=crop" 
+                src="/images/nebularcrosslogo.png" 
                 alt="Nebular Cross"
                 style={{
                   width: 45,
@@ -473,9 +472,9 @@ function App() {
                 'Implemented multi-feature Linear Regression and Cosine Similarity for policy scoring',
                 'Created social platform for publishing and discussing proposals'
               ]}
-              githubUrl="https://github.com/bhuvanh66"
+              githubUrl="https://github.com/guha-mahesh/PolicyPlayground"
               skills={["Python","Flask","Streamlit","scikit-learn","pandas","SQL","REST"]}
-              imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=300&fit=crop"
+              imageUrl="/images/policyplayground.png"
             />
           </motion.div>
           <motion.div className="section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
@@ -487,9 +486,9 @@ function App() {
                 'Built Streamlit dashboard with multiple visualization modules',
                 'Configurable simulation parameters for horizon, volatility, run count'
               ]}
-              githubUrl="https://github.com/bhuvanh66"
+              githubUrl="https://github.com/TamidNu/monte-carlo-simulation"
               skills={["Python","Streamlit","Pandas","Seaborn","Plotly","NumPy"]}
-              imageUrl="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=300&h=300&fit=crop"
+              imageUrl="/images/montecarlo.png"
             />
           </motion.div>
           <motion.div className="section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
@@ -500,9 +499,9 @@ function App() {
                 'Next.js + AWS architecture for scalability and DX',
                 'Improved onboarding and discoverability for organizations and volunteers'
               ]}
-              githubUrl="https://github.com/bhuvanh66"
+              githubUrl="https://github.com/Code-4-Community/shelter-link"
               skills={["Next.js","React","TypeScript","AWS","Node.js"]}
-              imageUrl="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=300&h=300&fit=crop"
+              imageUrl="/images/shelterlink.png"
             />
           </motion.div>
         </motion.div>
