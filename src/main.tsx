@@ -10,7 +10,7 @@ function Bootstrap() {
       duration: 1.1,
       easing: (t: number) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
-      smoothTouch: true,
+      //smoothTouch: true,
     })
 
     let rafId = 0
@@ -22,7 +22,6 @@ function Bootstrap() {
 
     return () => {
       cancelAnimationFrame(rafId)
-      // @ts-expect-error lenis destroy type may not exist in DT
       lenis.destroy?.()
     }
   }, [])
