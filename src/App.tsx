@@ -406,8 +406,9 @@ function App() {
                   title="TAMID Group — Software Developer"
                   subtitle="Boston, MA — Jan 2025 – Present"
                   bullets={[
-                    'Built ML-based collaborative music recommendation model and platform',
-                    'Training on tech consulting for Israeli startups; selected from 240+ applicants'
+                    'Developing Foresight, an AI-driven data analysis tool to forecast demand and enable dynamic hotel pricing',
+                    'Utilizing Next.JS, React, and machine learning to build collaborative music recommendation model and platform',
+                    'Selected as a member of education class from 240+ applicants, learning financial and technical concepts'
                   ]}
                 />
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
