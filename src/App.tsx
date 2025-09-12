@@ -504,6 +504,34 @@ function App() {
               imageUrl="/images/shelterlink.png"
             />
           </motion.div>
+          <motion.div className="section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
+            <ProjectCard
+              title="SpotiRecs"
+              summary="Full-stack app that analyzes songs and recommends tracks with similar vibes"
+              details={[
+                'Analyzes user-input songs using K-Means clustering on audio features (danceability, energy, tempo, acousticness, valence, genre)',
+                'Integrates with Spotify API for real-time music data and recommendations',
+                'Features custom Album Builder UI for playlist-like experience'
+              ]}
+              githubUrl="https://github.com/TamidNu/SpotiRecs"
+              skills={["React","Flask","Spotify API","Scikit-learn","K-Means","Python"]}
+              imageUrl="/images/spotirecs.png"
+            />
+          </motion.div>
+          <motion.div className="section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
+            <ProjectCard
+              title="Vital Hacks: Medical Diagnostic Tool"
+              summary="🏆 1st Place Winner - Adaptive survey tool for healthcare symptom assessment"
+              details={[
+                'Interactive skeletomuscular questionnaire with real-time progress tracking',
+                'Integrated NIH Open API for comprehensive disease information',
+                'Responsive design optimized for all devices, built during VITAL Hackathon 2025'
+              ]}
+              githubUrl="https://github.com/mehanana/vital_hacks_2025"
+              skills={["React","Node.js","NIH Open API","JavaScript","REST API"]}
+              imageUrl="/images/vitalhacks.png"
+            />
+          </motion.div>
         </motion.div>
       </section>
 
