@@ -105,8 +105,8 @@ function App() {
               margin: '0 auto 2rem'
             }}
           >
-            I'm a Computer Science student passionate about building interactive web experiences. 
-            Currently focused on React, TypeScript, and modern web technologies.
+            I’m passionate about full-stack development, data science, and AI-driven applications. 
+            Through building practical, adaptable systems that align technology with user experience, I ensure that every solution not only meets business goals but also delivers meaningful value to end users.
           </motion.p>
 
           {/* About Me Button */}
