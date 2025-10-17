@@ -105,7 +105,7 @@ function App() {
               margin: '0 auto 2rem'
             }}
           >
-            I’m passionate about full-stack development, data science, and AI-driven applications. 
+            I'm passionate about full-stack development, data science, and AI-driven applications. 
             Through building practical, adaptable systems that align technology with user experience, I ensure that every solution not only meets business goals but also delivers meaningful value to end users.
           </motion.p>
 
@@ -273,7 +273,7 @@ function App() {
               <div style={{ flex: 1, color: '#ffffff' }}>
                 <h3 style={{ margin: 0, color: '#ffffff', fontSize: '1.4rem' }}>Northeastern University</h3>
                 <p style={{ margin: '4px 0 0 0', opacity: 0.9, color: '#ffffff', fontSize: '1.1rem' }}>B.S. Computer Science & Business Administration</p>
-                <p style={{ margin: '4px 0 16px 0', opacity: 0.8, color: '#ffffff' }}>Boston, MA — GPA: 3.8/4.0 (Expected May 2028)</p>
+                <p style={{ margin: '4px 0 16px 0', opacity: 0.8, color: '#ffffff' }}>Boston, MA — GPA: 3.8/4.0 (Expected May 2027)</p>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
                   <div>
@@ -290,10 +290,11 @@ function App() {
                   <div>
                     <h4 style={{ margin: '0 0 8px 0', color: '#ffffff', fontSize: '1rem' }}>Honors & Awards</h4>
                     <AnimatedList items={[
-                      'VITAL Hackathon 1st Place',
-                      'John Martinson Honors',
-                      'Presidential Volunteer Service (Gold)',
-                      'Outstanding Engineer (SWE)'
+                      'VITAL Hackathon 1st Place Winner',
+                      'John Martinson\'s Honors Program',
+                      'Leo P. Gallagher Community Award',
+                      'Edith Wheeler Award',
+                      'Outstanding Engineer Award (SWE)'
                     ]} delay={0.2} />
                   </div>
                   
@@ -302,8 +303,8 @@ function App() {
                     <AnimatedList items={[
                       'SGA Campus Planning Board',
                       'Alliance for Civically Engaged Students',
-                      'NU Electric Racing Team',
-                      'Dining Advisory Board'
+                      'NU Electric Racing Embedded Software Team',
+                      'Disrupt'
                     ]} delay={0.3} />
                   </div>
                 </div>
@@ -339,54 +340,23 @@ function App() {
               <div style={{ flex: 1 }}>
                 <AccordionItem
                   title="Style.re — Software Engineering Intern"
-                  subtitle="Dallas, TX — Jun 2025 – Aug 2025"
+                  subtitle="Dallas, TX — June 2025 – Aug 2025"
                   bullets={[
-                    'Led 5 interns building scalable backend for fashion delivery (40 orders/day)',
-                    'Deployed via AWS EB, MongoDB, S3, Vercel; improved reliability and DX',
-                    'Integrated Twilio via Lambda + SQS for robust messaging & delivery tracking',
-                    'Optimized order flows (Mongo, React, Express, Node), reduced errors; enabled 3 providers'
+                    'Directed a team of 5 interns to build scalable backend systems for a fashion delivery platform conducting 40+ orders daily',
+                    'Oversaw frontend and backend deployment using AWS Elastic Beanstalk, MongoDB, AWS S3 Buckets, and Vercel',
+                    'Integrated messaging service using Twilio API with AWS Lambda and SQS for reliability and delivery tracking',
+                    'Developed and optimized order flow pipelines using MongoDB, React, Express, and Node.js, reducing processing errors, integrating three additional delivery providers, and implementing Stripe for payments and testing'
                   ]}
                 />
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
-                  {['AWS','MongoDB','React','Node.js','Twilio','SQS','AWS Lambda'].map((s) => (
+                  {['AWS','MongoDB','React','Node.js','Twilio','SQS','AWS Lambda','Stripe','Express'].map((s) => (
                     <SkillPill key={s} label={s} />
                   ))}
                 </div>
               </div>
             </div>
           </motion.div>
-          <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
-            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-              <img 
-                src="/images/c4clogo.png" 
-                alt="Code4Community"
-                style={{
-                  width: 60,
-                  height: 60,
-                  borderRadius: '12px',
-                  objectFit: 'cover',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  flexShrink: 0
-                }}
-              />
-              <div style={{ flex: 1 }}>
-                <AccordionItem
-                  title="Code4Community — Software Developer"
-                  subtitle="Boston, MA — Jan 2025 – Present"
-                  bullets={[
-                    'Built ShelterLink connecting 20+ Boston LGBTQ+ youth charities with volunteers',
-                    'Leveraged Next.js, React, Swift, AI scripting, AWS architecture',
-                    'Improved program efficiency and accessibility for members and clients'
-                  ]}
-                />
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
-                  {['Next.js','React','Swift','AWS','AI'].map((s) => (
-                    <SkillPill key={s} label={s} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          
           <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
               <img 
@@ -404,21 +374,55 @@ function App() {
               <div style={{ flex: 1 }}>
                 <AccordionItem
                   title="TAMID Group — Software Developer"
-                  subtitle="Boston, MA — Jan 2025 – Present"
+                  subtitle="Boston, MA — January 2025 – Present"
                   bullets={[
-                    'Developing Foresight, an AI-driven data analysis tool to forecast demand and enable dynamic hotel pricing',
-                    'Utilizing Next.JS, React, and machine learning to build collaborative music recommendation model and platform',
+                    'Developing Foresight, using AI, sentiment analysis, and data science to forecast demand and enable dynamic hotel pricing',
+                    'Utilizing K-Means Clustering, React, and machine learning to build collaborative music recommendation model',
                     'Selected as a member of education class from 240+ applicants, learning financial and technical concepts'
                   ]}
                 />
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
-                  {['React','TypeScript','Machine Learning'].map((s) => (
+                  {['React','K-Means Clustering','Machine Learning','AI','Data Science'].map((s) => (
                     <SkillPill key={s} label={s} />
                   ))}
                 </div>
               </div>
             </div>
           </motion.div>
+          
+          <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
+            <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+              <img 
+                src="/images/c4clogo.png" 
+                alt="Code4Community"
+                style={{
+                  width: 60,
+                  height: 60,
+                  borderRadius: '12px',
+                  objectFit: 'cover',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  flexShrink: 0
+                }}
+              />
+              <div style={{ flex: 1 }}>
+                <AccordionItem
+                  title="Code4Community — Software Developer"
+                  subtitle="Boston, MA — January 2025 – Present"
+                  bullets={[
+                    'Programming a web application for SSF, a national non-profit with 100,000 food items delivered and 35+ pantries served',
+                    'Using Next.JS, React, AI Scripting and AWS Cloud Architecture to streamline and track nonprofit operations',
+                    'Developed C4C program to be more efficient and accessible for other members and community clients'
+                  ]}
+                />
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
+                  {['Next.js','React','AI Scripting','AWS','TypeScript'].map((s) => (
+                    <SkillPill key={s} label={s} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          
           <motion.div className="card section-item" variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}>
             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
               <img 
@@ -436,14 +440,14 @@ function App() {
               <div style={{ flex: 1 }}>
                 <AccordionItem
                   title="Nebular Cross — Software Engineering Intern"
-                  subtitle="Stamford, CT — Jun 2023 – Aug 2024"
+                  subtitle="Stamford, CT — June 2023 – Aug 2024"
                   bullets={[
-                    'Built trading visualization tools with JS/HTML for commodities platform',
-                    'Automated generation of payment documents and integration across Teams/Outlook'
+                    'Engineered web-based trading visualization tools using JavaScript and HTML for commodities trading platform',
+                    'Developed a programming engine to create payment documents for 25 client companies, automated integration into networking apps (Microsoft Teams, Outlook, etc.)'
                   ]}
                 />
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 12 }}>
-                  {['JavaScript','HTML','Automation'].map((s) => (
+                  {['JavaScript','HTML','Microsoft Teams','Outlook','Automation'].map((s) => (
                     <SkillPill key={s} label={s} />
                   ))}
                 </div>
@@ -469,12 +473,12 @@ function App() {
               title="Policy Playground"
               summary="Predict GDP using policy + economic data with interactive exploration"
               details={[
-                'Built full-stack app with Flask API + Streamlit front-end',
-                'Implemented multi-feature Linear Regression and Cosine Similarity for policy scoring',
-                'Created social platform for publishing and discussing proposals'
+                'Developed full-stack web application leveraging historical policy and economic data to predict national GDP',
+                'Implemented multi-feature Linear Regression policy model and Cosine Similarity model for policy similarity scoring',
+                'Built a networking platform for politicians, economists, and activists to share and publish policy proposals'
               ]}
               githubUrl="https://github.com/guha-mahesh/PolicyPlayground"
-              skills={["Python","Flask","Streamlit","scikit-learn","pandas","SQL","REST"]}
+              skills={["Python","Flask","Streamlit","scikit-learn","pandas","SQL","REST API"]}
               imageUrl="/images/policyplayground.png"
             />
           </motion.div>
@@ -483,12 +487,11 @@ function App() {
               title="Monte Carlo Simulator"
               summary="Interactive simulation suite and dashboard for portfolio risk"
               details={[
-                'Fetched and cleaned 10k+ stock records from Yahoo Finance',
-                'Built Streamlit dashboard with multiple visualization modules',
-                'Configurable simulation parameters for horizon, volatility, run count'
+                'Automated retrieval and preprocessing of 10,000+ stock price records from Yahoo Finance, streamlining analysis workflows for 100+ investment fund members and enabling cleaner, faster financial modeling',
+                'Built an interactive dashboard with 5+ visualization modules and a fully customizable Monte Carlo simulation (adjustable time horizon, volatility, and run count) to explore historical trends, correlations, and portfolio risk with 90% accuracy'
               ]}
               githubUrl="https://github.com/TamidNu/monte-carlo-simulation"
-              skills={["Python","Streamlit","Pandas","Seaborn","Plotly","NumPy"]}
+              skills={["Python","Streamlit","Pandas","Seaborn","Plotly","NumPy","Yahoo Finance"]}
               imageUrl="/images/montecarlo.png"
             />
           </motion.div>
